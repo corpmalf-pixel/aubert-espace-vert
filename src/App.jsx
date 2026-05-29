@@ -1,60 +1,62 @@
-const navItems = ['Accueil', 'À propos', 'Services', 'Nos travaux', 'Horaires', 'Contact']
+const navItems = ['Accueil', 'À propos', 'Services', 'Nos réalisations', 'Horaires', 'Contact']
 
-const services = [
+const filters = ['Tous les projets', 'Jardins privés', 'Terrasses & patios', 'Éclairage extérieur', 'Plantations', 'Entretien']
+
+const projects = [
   {
-    number: '01',
-    title: 'Entretien de jardin',
-    text: 'Tonte, désherbage, arrosage, fertilisation... Un entretien régulier et rigoureux pour que votre jardin reste impeccable en toute saison.',
-    tone: 'mower',
+    title: 'Jardin contemporain',
+    location: 'Cergy, Val-d’Oise (95)',
+    tag: 'Jardins privés',
+    tone: 'one',
   },
   {
-    number: '02',
-    title: 'Élagage des arbres',
-    text: 'Taille d’éclaircissage, taille sanitaire, abattage, démontage en hauteur. Des interventions sécurisées pour préserver vos arbres et protéger votre propriété.',
-    tone: 'tree',
+    title: 'Terrasse élégante',
+    location: 'Pontoise, Val-d’Oise (95)',
+    tag: 'Terrasses & patios',
+    tone: 'two',
   },
   {
-    number: '03',
-    title: 'Taille de haies',
-    text: 'Taille d’entretien, de formation ou de réduction. Vos haies restent denses, nettes et bien délimitées, quelle que soit leur hauteur ou leur essence.',
-    tone: 'hedge',
+    title: 'Éclairage paysager',
+    location: 'Osny, Val-d’Oise (95)',
+    tag: 'Éclairage extérieur',
+    tone: 'three',
   },
   {
-    number: '04',
-    title: 'Tonte de pelouse',
-    text: 'Une pelouse tondue régulièrement, au bon niveau, pour un rendu propre et soigné qui valorise immédiatement votre espace extérieur.',
-    tone: 'grass',
+    title: 'Massifs fleuris',
+    location: 'Vauréal, Val-d’Oise (95)',
+    tag: 'Plantations',
+    tone: 'four',
   },
   {
-    number: '05',
-    title: 'Désherbage',
-    text: 'Suppression manuelle ou traitement des mauvaises herbes pour libérer vos massifs, allées et pelouses — et laisser la place aux végétaux que vous avez choisis.',
-    tone: 'weed',
+    title: 'Entretien régulier',
+    location: 'Neuville-sur-Oise, Val-d’Oise (95)',
+    tag: 'Entretien',
+    tone: 'five',
   },
   {
-    number: '06',
-    title: 'Plantation de fleurs et d’arbustes',
-    text: 'Conseils, sélection et mise en terre de végétaux adaptés à votre sol et à vos envies. Pour un jardin qui prend vie et du caractère au fil des saisons.',
-    tone: 'flowers',
+    title: 'Aménagement complet',
+    location: 'Eragny, Val-d’Oise (95)',
+    tag: 'Jardins privés',
+    tone: 'six',
   },
 ]
 
 export default function App() {
   return (
-    <main className="services-page">
-      <section className="services-frame">
-        <div className="services-bg" />
-        <div className="services-overlay" />
+    <main className="works-page">
+      <section className="works-frame">
+        <div className="works-bg" />
+        <div className="works-overlay" />
 
-        <header className="services-header">
+        <header className="works-header">
           <div className="logo-block">
             <span className="logo-title">AUBERT</span>
             <span className="logo-subtitle">ESPACE VERT</span>
           </div>
 
-          <nav className="services-nav">
+          <nav className="works-nav">
             {navItems.map((item, index) => (
-              <a key={item} href="#" className={index === 2 ? 'active' : ''}>
+              <a key={item} href="#" className={index === 3 ? 'active' : ''}>
                 {item}
               </a>
             ))}
@@ -63,36 +65,58 @@ export default function App() {
           <a className="top-cta" href="#">Demander un devis</a>
         </header>
 
-        <section className="hero-copy">
-          <p className="section-kicker">NOS SERVICES</p>
+        <section className="works-hero">
+          <p className="section-kicker">NOS RÉALISATIONS</p>
           <h1>
-            Des prestations complètes
+            Des espaces verts
             <br />
-            pour un jardin impeccable.
+            pensés pour <em>durer.</em>
           </h1>
           <p className="hero-text">
-            Entretien régulier, tailles, plantations ou aménagements,
+            Chaque projet est unique. Découvrez une sélection de nos
             <br />
-            nous mettons notre savoir-faire à votre service pour
-            <br />
-            sublimer vos extérieurs.
+            réalisations, conçues avec passion et savoir-faire.
           </p>
         </section>
 
-        <section className="services-board">
-          {services.map((service) => (
-            <article className="service-row" key={service.number}>
-              <div className={`service-image ${service.tone}`} />
-              <div className="service-info">
-                <div className="service-headline">
-                  <span className="service-number">{service.number}</span>
-                  <h2>{service.title}</h2>
+        <section className="works-toolbar">
+          <div className="filter-row">
+            {filters.map((filter, index) => (
+              <a key={filter} href="#" className={index === 0 ? 'filter-pill active' : 'filter-link'}>
+                {filter}
+              </a>
+            ))}
+          </div>
+
+          <a href="#" className="sort-pill">Trier par</a>
+        </section>
+
+        <section className="projects-grid">
+          {projects.map((project) => (
+            <article className={`project-card ${project.tone}`} key={project.title}>
+              <div className="project-image" />
+              <div className="project-shade" />
+              <div className="project-copy">
+                <div>
+                  <h2>{project.title}</h2>
+                  <p>{project.location}</p>
                 </div>
-                <p>{service.text}</p>
+                <span className="project-tag">{project.tag}</span>
               </div>
-              <a href="#" className="service-btn">En savoir plus</a>
             </article>
           ))}
+        </section>
+
+        <section className="bottom-cta-panel">
+          <div className="panel-left">
+            <div className="leaf-icon">◌</div>
+            <div>
+              <h3>Un projet en tête ?</h3>
+              <p>Discutons de vos idées et créons ensemble un extérieur qui vous ressemble.</p>
+            </div>
+          </div>
+
+          <a href="#" className="panel-cta">Demander un devis</a>
         </section>
       </section>
     </main>
