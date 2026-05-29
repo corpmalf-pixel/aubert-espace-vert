@@ -6,41 +6,28 @@ const proofItems = [
   ['Devis & déplacement', '100% gratuits'],
   ['Paiement en plusieurs fois', 'Sans frais'],
   ['Intervention rapide', 'et efficace'],
-  ['Assurance', 'professionnelle'],
-  ['Tarifs au forfait', 'imbattables'],
 ]
 
 export default function HomePage() {
   return (
-    <main className="landing-page">
-      <section className="hero-frame home-page">
-        <div className="hero-bg" />
-        <div className="hero-overlay" />
-        <NavHeader className="hero-header" />
-
-        <div className="hero-content">
-          <p className="hero-kicker">ENTRETIEN & AMÉNAGEMENT</p>
-          <h1>Des jardins<br />soignés, toute<br />l’année.</h1>
-          <div className="hero-divider" />
-          <p className="hero-description">
-            Entretien, élagage, taille, tonte, plantations…<br />
-            Aubert Espace Vert prend soin de vos espaces<br />
-            extérieurs depuis 1989.
-          </p>
-          <div className="hero-actions">
-            <NavLink className="hero-btn primary" to="/reservation">Demander un devis gratuit</NavLink>
-            <NavLink className="hero-btn secondary" to="/services">Découvrir nos services</NavLink>
-          </div>
+    <main className="page-shell">
+      <div className="page-bg" />
+      <div className="page-overlay" />
+      <NavHeader className="page-header" />
+      <section className="page-content">
+        <p className="kicker">ENTRETIEN & AMÉNAGEMENT</p>
+        <h1 className="hero-title">Des jardins soignés,<br />toute l’année.</h1>
+        <div className="hero-line" />
+        <p className="hero-copy">Entretien, élagage, taille, tonte, plantations… Aubert Espace Vert prend soin de vos espaces extérieurs depuis 1989.</p>
+        <div className="cta-row">
+          <NavLink className="primary-btn" to="/reservation">Demander un devis gratuit <span>→</span></NavLink>
+          <NavLink className="secondary-btn" to="/services">Découvrir nos services</NavLink>
         </div>
-
-        <section className="proof-bar">
+        <div className="proof-grid">
           {proofItems.map(([title, subtitle]) => (
-            <article className="proof-item" key={title}>
-              <strong>{title}</strong>
-              <span>{subtitle}</span>
-            </article>
+            <article className="proof-item" key={title}><strong>{title}</strong><span>{subtitle}</span></article>
           ))}
-        </section>
+        </div>
       </section>
     </main>
   )

@@ -1,55 +1,23 @@
 import NavHeader from '../components/NavHeader'
-
-const schedule = [
-  ['Lundi', '08:00 – 18:00'],
-  ['Mardi', '08:00 – 18:00'],
-  ['Mercredi', '08:00 – 18:00'],
-  ['Jeudi', '08:00 – 18:00'],
-  ['Vendredi', '08:00 – 18:00'],
-  ['Samedi', '09:00 – 13:00', true],
-  ['Dimanche', 'Fermé'],
-]
-
+const schedule = [['Lundi – Vendredi','8h00 – 21h00'],['Samedi','8h30 – 20h30']]
 export default function HoursPage() {
   return (
-    <main className="hours-page">
-      <section className="hours-frame">
-        <div className="hours-bg" />
-        <div className="hours-photo" />
-        <div className="hours-overlay" />
-        <NavHeader className="hours-header" />
-
-        <section className="hours-layout">
-          <div className="hours-left">
-            <p className="section-kicker">NOS HORAIRES</p>
-            <h1>Toujours disponibles<br />pour vos <em>espaces verts.</em></h1>
-            <div className="accent-line" />
-            <p className="intro-text">
-              Notre équipe est à votre écoute toute la semaine<br />
-              pour concrétiser vos projets d’aménagement et d’entretien.
-            </p>
-            <div className="info-stack">
-              <article className="info-card"><div className="icon-circle">◷</div><div><h2>Interventions flexibles</h2><p>Des créneaux adaptés à vos besoins, du lundi au samedi.</p></div></article>
-              <article className="info-card"><div className="icon-circle">⌘</div><div><h2>Devis et conseils</h2><p>Nos experts répondent à vos demandes pendant nos heures d’ouverture.</p></div></article>
-            </div>
-            <a className="hero-btn" href="/reservation">Demander un devis <span>→</span></a>
+    <main className="page-shell">
+      <div className="page-bg" /><div className="page-overlay" />
+      <NavHeader className="page-header" />
+      <section className="page-content page-grid two-col">
+        <div>
+          <p className="kicker">NOS HORAIRES</p>
+          <h1 className="hero-title">Toujours disponibles<br />pour vos <em>espaces verts.</em></h1>
+          <div className="hero-line" />
+          <p className="hero-copy">Des horaires larges pour faciliter la prise de contact et la planification des interventions.</p>
+        </div>
+        <div className="glass-card padded">
+          <h3>Horaires d’ouverture</h3>
+          <div className="list-rows">
+            {schedule.map(([day, hours]) => <div className="row-item" key={day}><div className="icon-dot">◷</div><div><strong>{day}</strong><span className="muted">{hours}</span></div></div>)}
           </div>
-
-          <div className="hours-right">
-            <section className="schedule-card">
-              <div className="schedule-head"><div className="icon-ring">◷</div><h2>Horaires d’ouverture</h2></div>
-              <div className="schedule-list">
-                {schedule.map(([day, value, accent]) => (
-                  <div className="schedule-row" key={day}><span>{day}</span><strong className={accent ? 'highlight' : value === 'Fermé' ? 'closed' : ''}>{value}</strong></div>
-                ))}
-              </div>
-            </section>
-            <section className="contact-strip">
-              <div className="contact-left"><div className="icon-circle small">⌁</div><div><h3>Urgence ou demande spécifique ?</h3><p>Contactez-nous, nous intervenons rapidement.</p></div></div>
-              <a href="tel:0612345678" className="phone-link">06 12 34 56 78</a>
-            </section>
-          </div>
-        </section>
+        </div>
       </section>
     </main>
   )
