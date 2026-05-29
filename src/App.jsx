@@ -1,32 +1,35 @@
 const navItems = ['Accueil', 'À propos', 'Services', 'Nos réalisations', 'Horaires', 'Contact']
 
-const schedule = [
-  ['Lundi', '08:00 – 18:00'],
-  ['Mardi', '08:00 – 18:00'],
-  ['Mercredi', '08:00 – 18:00'],
-  ['Jeudi', '08:00 – 18:00'],
-  ['Vendredi', '08:00 – 18:00'],
-  ['Samedi', '09:00 – 13:00', true],
-  ['Dimanche', 'Fermé'],
+const sideCards = [
+  {
+    icon: '◷',
+    title: 'Réponse rapide',
+    text: 'Nous vous répondons sous 24h ouvrées.',
+  },
+  {
+    icon: '⌘',
+    title: 'Devis personnalisé',
+    text: 'Un devis clair et détaillé, adapté à vos besoins.',
+  },
+  {
+    icon: '◌',
+    title: 'Sans engagement',
+    text: 'Demande 100% gratuite et sans engagement.',
+  },
 ]
 
 export default function App() {
   return (
-    <main className="hours-page">
-      <section className="hours-frame">
-        <div className="hours-bg" />
-        <div className="hours-photo" />
-        <div className="hours-overlay" />
+    <main className="contact-page">
+      <section className="contact-frame">
+        <div className="contact-bg" />
+        <div className="contact-photo" />
+        <div className="contact-overlay" />
 
-        <header className="hours-header">
-          <div className="logo-block">
-            <span className="logo-title">AUBERT</span>
-            <span className="logo-subtitle">ESPACE VERT</span>
-          </div>
-
-          <nav className="hours-nav">
+        <header className="contact-header">
+          <nav className="contact-nav">
             {navItems.map((item, index) => (
-              <a key={item} href="#" className={index === 4 ? 'active' : ''}>
+              <a key={item} href="#" className={index === 5 ? 'active' : ''}>
                 {item}
               </a>
             ))}
@@ -35,70 +38,111 @@ export default function App() {
           <a className="top-cta" href="#">Demander un devis <span>→</span></a>
         </header>
 
-        <section className="hours-layout">
-          <div className="hours-left">
-            <p className="section-kicker">NOS HORAIRES</p>
+        <section className="contact-layout">
+          <div className="contact-left">
+            <p className="section-kicker">DEMANDE DE DEVIS GRATUIT</p>
             <h1>
-              Toujours disponibles
+              Parlez-nous de votre projet,
               <br />
-              pour vos <em>espaces verts.</em>
+              nous nous occupons du <em>reste.</em>
             </h1>
-            <div className="accent-line" />
             <p className="intro-text">
-              Notre équipe est à votre écoute toute la semaine
+              Remplissez le formulaire ci-dessous et recevez
               <br />
-              pour concrétiser vos projets d’aménagement et d’entretien.
+              une réponse personnalisée sous 24h.
             </p>
 
-            <div className="info-stack">
-              <article className="info-card">
-                <div className="icon-circle">◷</div>
-                <div>
-                  <h2>Interventions flexibles</h2>
-                  <p>Des créneaux adaptés à vos besoins, du lundi au samedi.</p>
-                </div>
-              </article>
+            <form className="quote-form">
+              <div className="double-grid">
+                <label>
+                  <span>Nom complet <em>*</em></span>
+                  <input type="text" placeholder="Votre nom" />
+                </label>
 
-              <article className="info-card">
-                <div className="icon-circle">⌘</div>
-                <div>
-                  <h2>Devis et conseils</h2>
-                  <p>Nos experts répondent à vos demandes pendant nos heures d’ouverture.</p>
-                </div>
-              </article>
-            </div>
+                <label>
+                  <span>Email <em>*</em></span>
+                  <input type="email" placeholder="votre.email@exemple.com" />
+                </label>
 
-            <a className="hero-btn" href="#">Demander un devis <span>→</span></a>
+                <label>
+                  <span>Téléphone <em>*</em></span>
+                  <input type="tel" placeholder="06 12 34 56 78" />
+                </label>
+
+                <label>
+                  <span>Adresse du projet</span>
+                  <input type="text" placeholder="Ville, code postal" />
+                </label>
+              </div>
+
+              <label>
+                <span>Type de projet <em>*</em></span>
+                <div className="select-wrap">
+                  <select defaultValue="">
+                    <option value="" disabled>Sélectionnez un type de projet</option>
+                    <option>Entretien de jardin</option>
+                    <option>Élagage</option>
+                    <option>Taille de haies</option>
+                    <option>Aménagement</option>
+                  </select>
+                  <i>⌄</i>
+                </div>
+              </label>
+
+              <label>
+                <span>Budget estimatif</span>
+                <div className="select-wrap">
+                  <select defaultValue="">
+                    <option value="" disabled>Sélectionnez une fourchette</option>
+                    <option>Moins de 500€</option>
+                    <option>500€ – 1500€</option>
+                    <option>1500€ – 3000€</option>
+                    <option>3000€ et plus</option>
+                  </select>
+                  <i>⌄</i>
+                </div>
+              </label>
+
+              <label>
+                <span>Décrivez votre projet <em>*</em></span>
+                <textarea rows="5" placeholder="Parlez-nous de vos idées, vos besoins, vos envies..." />
+              </label>
+
+              <div className="upload-block">
+                <p>Souhaitez-vous ajouter des photos ? (optionnel)</p>
+                <div className="upload-drop">
+                  <div className="upload-icon">⇪</div>
+                  <strong>Glissez vos fichiers ici ou cliquez pour parcourir</strong>
+                  <span>Formats acceptés : JPG, PNG (max. 10 Mo)</span>
+                </div>
+              </div>
+
+              <label className="checkbox-row">
+                <input type="checkbox" />
+                <span>J’accepte d’être contacté(e) par Aubert Espace Vert concernant ma demande de devis.</span>
+              </label>
+
+              <button type="button" className="submit-btn">
+                <span>Envoyer ma demande</span>
+                <b>→</b>
+              </button>
+
+              <div className="privacy-row">
+                <div className="privacy-icon">◌</div>
+                <p>Vos données sont confidentielles et ne seront jamais partagées.</p>
+              </div>
+            </form>
           </div>
 
-          <div className="hours-right">
-            <section className="schedule-card">
-              <div className="schedule-head">
-                <div className="icon-ring">◷</div>
-                <h2>Horaires d’ouverture</h2>
-              </div>
-
-              <div className="schedule-list">
-                {schedule.map(([day, value, accent]) => (
-                  <div className="schedule-row" key={day}>
-                    <span>{day}</span>
-                    <strong className={accent ? 'highlight' : value === 'Fermé' ? 'closed' : ''}>{value}</strong>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            <section className="contact-strip">
-              <div className="contact-left">
-                <div className="icon-circle small">⌁</div>
-                <div>
-                  <h3>Urgence ou demande spécifique ?</h3>
-                  <p>Contactez-nous, nous intervenons rapidement.</p>
-                </div>
-              </div>
-              <a href="tel:0612345678" className="phone-link">06 12 34 56 78</a>
-            </section>
-          </div>
+          <aside className="contact-right">
+            {sideCards.map((card) => (
+              <article className="side-card" key={card.title}>
+                <div className="icon-circle">{card.icon}</div>
+                <h2>{card.title}</h2>
+                <p>{card.text}</p>
+              </article>
+            ))}
+          </aside>
         </section>
       </section>
     </main>
