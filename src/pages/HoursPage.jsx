@@ -1,5 +1,5 @@
 import NavHeader from '../components/NavHeader'
-const schedule = [['Lundi – Vendredi','8h00 – 21h00'],['Samedi','8h30 – 20h30']]
+const schedule = [['Lun - Ven','8h - 18h'],['Sam','8h - 12h30']]
 export default function HoursPage() {
   return (
     <main className="page-shell">
