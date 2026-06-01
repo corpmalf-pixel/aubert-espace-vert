@@ -1,9 +1,4 @@
 import NavHeader from '../components/NavHeader'
-const values = [
-  ['Passion', 'Le goût du travail bien fait et l’amour des beaux jardins.'],
-  ['Confiance', 'Une relation de proximité basée sur l’écoute et la transparence.'],
-  ['Qualité', 'Des prestations soignées rigoureusement, respectueuses et durables.'],
-]
 const timeline = [
   ['1989', 'Création de l’entreprise'],
   ['2005', 'Reprise par le fils'],
@@ -20,11 +15,6 @@ export default function AboutPage() {
           <h1 className="hero-title">Une entreprise familiale<br />depuis plus de 30 ans.</h1>
           <div className="hero-line" />
           <p className="hero-copy">Fondée en 1989, l’entreprise a été reprise en 2005 avec la même exigence : un service de proximité, un travail propre et une vraie régularité terrain.</p>
-        </div>
-        <div className="glass-card values-card">
-          <div className="page-grid three-col values-grid">
-            {values.map(([title, text]) => <article className="values-item" key={title}><strong>{title}</strong><span className="muted">{text}</span></article>)}
-          </div>
         </div>
         <div className="glass-card timeline-card" style={{gridColumn:'1 / -1'}}>
           <div className="page-grid three-col timeline-grid">
