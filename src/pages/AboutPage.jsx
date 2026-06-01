@@ -21,9 +21,9 @@ export default function AboutPage() {
           <div className="hero-line" />
           <p className="hero-copy">Fondée en 1989, l’entreprise a été reprise en 2005 avec la même exigence : un service de proximité, un travail propre et une vraie régularité terrain.</p>
         </div>
-        <div className="glass-card padded">
-          <div className="page-grid three-col">
-            {values.map(([title, text]) => <article key={title}><strong>{title}</strong><span className="muted">{text}</span></article>)}
+        <div className="glass-card values-card">
+          <div className="page-grid three-col values-grid">
+            {values.map(([title, text]) => <article className="values-item" key={title}><strong>{title}</strong><span className="muted">{text}</span></article>)}
           </div>
         </div>
         <div className="glass-card timeline-card" style={{gridColumn:'1 / -1'}}>

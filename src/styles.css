@@ -258,33 +258,50 @@ img, svg, canvas { max-width: 100%; display: block; }
 .padded { padding: 28px; }
 .center { text-align: center; }
 
+.values-card,
 .timeline-card {
-  padding: 18px 22px;
-  border-radius: 18px;
-  border-color: rgba(255,255,255,0.07);
-  background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 10px 24px rgba(0,0,0,0.12);
+  padding: 16px 20px;
+  border-radius: 16px;
+  border-color: rgba(255,255,255,0.06);
+  background: linear-gradient(180deg, rgba(255,255,255,0.045) 0%, rgba(255,255,255,0.016) 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 8px 20px rgba(0,0,0,0.10);
 }
 
+.values-grid,
 .timeline-grid {
-  gap: 18px;
+  gap: 16px;
 }
 
+.values-item,
 .timeline-item {
   text-align: center;
 }
 
+.values-item strong {
+  display: block;
+  font-size: 1.08rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.values-item .muted {
+  margin-top: 6px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
 .timeline-item strong {
   display: block;
-  font-size: 1.5rem;
+  font-size: 1.32rem;
   line-height: 1;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.05em;
+  font-weight: 600;
 }
 
 .timeline-item .muted {
   margin-top: 6px;
-  font-size: 0.94rem;
-  line-height: 1.45;
+  font-size: 0.9rem;
+  line-height: 1.42;
 }
 
 .placeholder-image {
