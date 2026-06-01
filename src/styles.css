@@ -258,6 +258,35 @@ img, svg, canvas { max-width: 100%; display: block; }
 .padded { padding: 28px; }
 .center { text-align: center; }
 
+.timeline-card {
+  padding: 18px 22px;
+  border-radius: 18px;
+  border-color: rgba(255,255,255,0.07);
+  background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 10px 24px rgba(0,0,0,0.12);
+}
+
+.timeline-grid {
+  gap: 18px;
+}
+
+.timeline-item {
+  text-align: center;
+}
+
+.timeline-item strong {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.timeline-item .muted {
+  margin-top: 6px;
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
 .placeholder-image {
   min-height: 180px;
   border-radius: 18px;

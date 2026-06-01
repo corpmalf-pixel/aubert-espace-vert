@@ -26,9 +26,9 @@ export default function AboutPage() {
             {values.map(([title, text]) => <article key={title}><strong>{title}</strong><span className="muted">{text}</span></article>)}
           </div>
         </div>
-        <div className="glass-card padded" style={{gridColumn:'1 / -1'}}>
-          <div className="page-grid three-col">
-            {timeline.map(([year, text]) => <article key={year}><strong>{year}</strong><span className="muted">{text}</span></article>)}
+        <div className="glass-card timeline-card" style={{gridColumn:'1 / -1'}}>
+          <div className="page-grid three-col timeline-grid">
+            {timeline.map(([year, text]) => <article className="timeline-item" key={year}><strong>{year}</strong><span className="muted">{text}</span></article>)}
           </div>
         </div>
       </section>
