@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom'
-import logoAubert from '../assets/logo-aubert.png'
 
 const items = [
   ['Accueil', '/accueil'],
@@ -15,7 +14,8 @@ export default function NavHeader({ className = '', ctaLabel = 'Demander un devi
     <header className={className}>
       {showLogo ? (
         <div className="logo-block">
-          <img src={logoAubert} alt="Aubert Espace Vert" className="site-logo" />
+          <span className="logo-title">AUBERT</span>
+          <span className="logo-subtitle">ESPACE VERT</span>
         </div>
       ) : <div />}
 

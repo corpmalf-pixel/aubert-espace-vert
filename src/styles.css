@@ -58,7 +58,7 @@ img, svg, canvas { max-width: 100%; display: block; }
 
 .page-header {
   display: grid;
-  grid-template-columns: 240px 1fr auto;
+  grid-template-columns: 220px 1fr auto;
   align-items: center;
   gap: 24px;
   padding: 18px 22px;
@@ -73,17 +73,9 @@ img, svg, canvas { max-width: 100%; display: block; }
 
 .logo-block {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 8px;
 }
-
-.site-logo {
-  display: block;
-  width: 100%;
-  max-width: 210px;
-  height: auto;
-  object-fit: contain;
-}
-
 .logo-title {
   font-size: 1.9rem;
   letter-spacing: -0.05em;
@@ -94,6 +86,10 @@ img, svg, canvas { max-width: 100%; display: block; }
   letter-spacing: 0.34em;
   text-transform: uppercase;
   color: var(--accent);
+}
+
+.site-logo {
+  display: none;
 }
 
 .site-nav {
@@ -374,9 +370,6 @@ img, svg, canvas { max-width: 100%; display: block; }
   .page-header {
     grid-template-columns: 1fr;
     justify-items: start;
-  }
-  .site-logo {
-    max-width: 180px;
   }
   .two-col,
   .three-col,
